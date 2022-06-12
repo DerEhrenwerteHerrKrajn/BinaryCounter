@@ -55,6 +55,8 @@ class QtButton(QObject):
 
     def gpioChange(self):
         self.changed.emit()
+        print("changed")
+        gui.checker()
 
 class Counter(QWidget):
     
@@ -117,9 +119,6 @@ if __name__ ==  '__main__':
     buttonReset.changed.connect(gui.countReset)
     buttonDown.changed.connect(gui.countDown)
     buttonUp.changed.connect(gui.countUp)
-    buttonReset.changed.connect(gui.checker)
-    buttonDown.changed.connect(gui.checker)
-    buttonUp.changed.connect(gui.checker)
     app.exec_()
     
 
